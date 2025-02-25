@@ -1,0 +1,335 @@
+.rest-header-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+}
+.rest-header{
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #03081fe3;
+    background-image: url("../../public/Rectangle\ 43.png");
+    background-blend-mode: multiply;
+    padding: 40px;
+    gap: 30px;
+    align-items: last baseline;
+}
+.rest-header section{
+    flex-grow: 1;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+.rest-header img{
+    object-fit: cover;
+    border-radius: 10px;
+    align-self: baseline;
+}
+.rest-header section img{
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+}
+.rest-header h1{
+    font-size: 50px;
+}
+.rest-header div{
+    display: flex;
+    gap: 10px;
+}
+.rest-header button{
+    height: 45px;
+    width: 48%;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #d9d9d9;
+}
+
+.card4{
+    background-image: url("../../public/Rectangle\ 8\ \(5\).png");
+    background-size: cover;
+}
+.card5{
+    background-image: url("../../public/Rectangle\ 8\ \(3\).png");
+    background-size: cover;
+}
+.card6{
+    background-image: url("../../public/Rectangle\ 8\ \(4\).png");
+    background-size: cover;
+}
+.top-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+}
+.top{
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top form{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    padding: 5px;
+    gap: 5px;
+}
+.top form input{
+    height: 100%;
+    outline: none;
+    flex-grow: 1;
+    border: none;
+}
+
+.filter-con{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-top: 60px;
+    background-color: #fc8a06;
+}
+.filter{
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    list-style: none;
+}
+.filter li{
+    padding: 7px;
+    border-radius: 20px;
+    transition: all 600ms ;
+}
+.filter li:hover{
+    background-color: #03081f;
+}
+.filter::-webkit-scrollbar{
+    display: none;
+}
+
+.items-con{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 60px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+}
+.items div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.items div main{
+    width: 31.5%;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 20px rgb(173, 173, 173);
+}
+.items div main section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+.items img{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+}
+.items p{
+    font-size: 14px;
+}
+.items b{
+    font-size: 15px;
+}
+.items h2{
+    color: #fc8a06;
+    font-size: 40px;
+}
+.delivery-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+.delivery{
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: stretch;
+    box-shadow: 5px 5px 25px rgb(212, 212, 212);
+    border-radius: 10px;
+}
+.delivery div{
+    padding: 50px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    transition: all 400ms;
+}
+.delivery ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+}
+.delivery p{
+    font-size: 14px;
+    line-height: 25px;
+}
+.delivery div:hover{
+    background-color:#03081f;
+    color: #ffffff;
+}
+
+.location-con {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    width: 100%;
+}
+.location{
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    box-shadow: 5px 5px 25px rgb(212, 212, 212);
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+.location main{
+ position: absolute;
+ height: 100%;
+ width: 100%;
+ top: 0;
+ left: 0;
+ z-index: -1;
+}
+.location section{
+    height: 85%;
+    width: 350px;
+    background-color: #03081f;
+    z-index:1;
+    border-radius: 10px;
+    margin-left: 60px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+}
+.location section p{
+    color: #fc8a06;
+}
+
+.review-con{
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 80px;
+}
+.review{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.review> section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.review> section div{
+    display: flex;
+    gap: 10px;
+}
+.review> section div span{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #fc8a06;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review main{
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+}
+.review main i{
+    border: 1px solid #fc8a06;
+}
+.review main section{
+    display: flex;
+    gap: 5px;
+}
+.review main::-webkit-scrollbar{
+    display: none;
+}
+.review main >div{
+    background-color: #ffffff;
+    padding: 20px;
+    min-width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 15px;
+}
+.review main p{
+    line-height: 25px;
+}
+.review article{
+    width: 100%;
+    position: absolute;
+    bottom: -150px;
+    display: flex;
+    justify-content: center;
+}
