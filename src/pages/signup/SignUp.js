@@ -2,8 +2,6 @@ import FirstSectionSignup from "./FirstSection";
 import SecondSection from "./SecondSection";
 import { useParams } from "react-router-dom";
 import "./Signup.css";
-import ThirdSectionSignup from "./ThirdSection";
-import { useState } from "react";
 
 
 const SignUp = () => {
@@ -13,10 +11,8 @@ const SignUp = () => {
       <div className="signup">
         {Number(params.section) === 1 ? (
           <FirstSectionSignup />
-        ) : Number(params.section) === 2 ? (
+        ) :  (
           <SecondSection />
-        ) : (
-          <ThirdSectionSignup />
         )}
       </div>
     </>
