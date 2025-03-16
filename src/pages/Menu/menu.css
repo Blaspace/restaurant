@@ -1,0 +1,38 @@
+.menu-filter-con {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.menu-filter {
+  background-color: #fc8a06;
+  border-radius: 8px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 90%;
+  max-width: 1200px;
+}
+.menu-filter ul {
+  display: flex;
+  list-style: none;
+  color: #ffffff;
+  justify-content: space-between;
+  width: 90%;
+  overflow-x: scroll;
+}
+.menu-filter ul::-webkit-scrollbar{
+  display: none;
+}
+.menu-filter li {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+}
+.menu-filter li:hover {
+  background-color: #000000;
+  border-radius: 20px;
+}

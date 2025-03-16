@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer">
         <section style={{width:"25%"}}>
           <h1>OderUK</h1>
-          <img src={require('../public/Group.png')}/>
+          <img src={require('../public/Group.png')} width={'80%'}/>
           <p>Company #783639hr, registered with house of companies</p>
         </section>
         <section style={{width:"30%"}}>

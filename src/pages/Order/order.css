@@ -1,0 +1,22 @@
+.orderlist-con{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+.orderlist{
+    width: 90%;
+    max-width: 1200px;
+}
+.orderlist section{
+    background-color: #d9d9d9;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+}

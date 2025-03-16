@@ -1,0 +1,108 @@
+/** @format */
+
+.signup {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+}
+.signup div {
+  height: 100%;
+  width: 100%;
+}
+.signup-left {
+  background-color: rgb(165, 162, 162);
+  width: 50%;
+  background-image: url("../../public/Rectangle\ 8.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  display: none;
+}
+.signup-right {
+  background-color: #fcfafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #4f4f4f;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.signup h1{
+  font-size: 25px;
+}
+.signup-right form {
+  background-color: #ffffff;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+}
+.signup-right form section {
+  display: flex;
+  background-color: #fcfafa;
+}
+.activel {
+  background-color: #fc8a06;
+  color: #ffffff;
+  text-decoration: none;
+}
+.domantl {
+  background-color: transparent;
+  color: #4f4f4f;
+  text-decoration: none;
+}
+.signup-right form p {
+  font-size: 16px;
+  text-align: center;
+  color: #a7a7a7;
+}
+.signup-right input {
+  height: 50px;
+  border: 1px solid #c4c4c4;
+  width: 70%;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.signup-right button {
+  height: 40px;
+  width: 90px;
+  color: #ffffff;
+  background-color: #fc8a06;
+  border: none;
+  border-radius: 10px;
+  font-weight: 550;
+  font-size: 16px;
+}
+.demo{
+  width: 90%;
+  background-color: #ffffff;
+  color: #4f4f4f;
+  padding: 15px;
+}
+.demo div{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (min-width: 780px) {
+  .signup-left {
+    display: block;
+  }
+  .signup-right {
+    width: 50%;
+  }
+  .signup-right form {
+    width: 80%;
+  }
+  .demo{
+    width:40%;
+  }
+}

@@ -36,7 +36,7 @@ function HomeHeader() {
         <section>
           <div>
             <span>1</span>
-            <h3>Oder</h3>
+            <h3>Order</h3>
             <p>
               <b>We've recieved your order</b>
             </p>
@@ -44,7 +44,7 @@ function HomeHeader() {
           </div>
           <div style={{ marginLeft: "50px" }}>
             <span>2</span>
-            <h3>Oder</h3>
+            <h3>Order</h3>
             <p>
               <b>We've recieved your order</b>
             </p>
@@ -52,7 +52,7 @@ function HomeHeader() {
           </div>
           <div>
             <span>3</span>
-            <h3>Oder</h3>
+            <h3>Order</h3>
             <p>
               <b>We've recieved your order</b>
             </p>

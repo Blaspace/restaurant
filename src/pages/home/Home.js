@@ -11,10 +11,12 @@ import FifthSection from "./FifthSection";
 import SixthSection from "./SixthSection";
 import SeventhSection from "./SeventhSection";
 import Footer from "../../components/Footer";
+import TopSection from "../../components/TopSection";
 
 function Home() {
   return (
     <div>
+      <TopSection/>
       <Nav />
       <HomeHeader/>
       <FirstSection/>

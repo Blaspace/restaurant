@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { useParams } from "react-router-dom";
+
 
 const mapStyle = {
   width: "100%",
@@ -8,7 +10,8 @@ const mapStyle = {
   zIndex: -1
 };
 
-function Map() {
+function Map({restaurant}) {
+const params = useParams()
   const [center, setCenter] = useState({
     lat: 9.0563,
     lng: 7.491302
@@ -30,22 +33,23 @@ function Map() {
     setMap(null);
   }, []);
 
+
   return (
     <div className="location-con">
       <div className="location">
         <section>
           <span>
-            <h2>McDonald's</h2>
-            <p>South London</p>
+            <h2>{restaurant[0].name}</h2>
+            <p>{restaurant[0].state}</p>
             <br/>
             <small>Company #783639hr, registered with house of companies</small>
             <br/>
             <br/>
             <b>Phone number</b>
-            <p>+91256788</p>
+            <p>{restaurant[0].phoneNumber}</p>
             <br/>
             <b>Website</b>
-            <p>https://www.McDonald.com</p>
+            <p>{restaurant[0].website}</p>
           </span>
         </section>
       <main>

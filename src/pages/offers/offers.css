@@ -1,0 +1,76 @@
+.offer-header-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+}
+
+.offer-header{
+    display: flex;
+    width: 90%;
+    flex-direction: column-reverse;
+    max-width: 1200px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #d9d9d973;
+    background-image: url("../../public/Rectangle\ 43.png");
+    background-blend-mode:color;
+    padding: 15px;
+    gap: 30px;
+    align-items: last baseline;
+}
+.offer-header section{
+    flex-grow: 1;
+    color: #03081f;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+.offer-header img{
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+}
+.offer-header section img{
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+}
+.offer-header h1{
+    font-size: 35px;
+}
+.offer-header div{
+    display: flex;
+    gap: 10px;
+}
+.offer-header button{
+    height: 45px;
+    width: 48%;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #03081f;
+    border: 1px solid #03081f;
+}
+.offer-header article{
+    height: 90%;
+    width: 100%;
+    background-color: #ff8800;
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    border-radius: 8px;
+}
+@media (min-width: 780px) {
+.offer-header{
+    flex-direction: row;
+    padding: 40px;
+}
+.offer-header h1{
+    font-size: 50px;
+}
+.offer-header article{
+    width: 45%;
+}
+}
