@@ -30,8 +30,8 @@ function Items({ title, items }) {
     if (duplicate.length) {
       setMessage(`Item "${item.name}" already added to cart!`);
     } else {
-      setCart([...cart, item])
-      const i = JSON.stringify([...cart, item]);
+      setCart([...cart, {...item, num: 1}])
+      const i = JSON.stringify([...cart, {...item, num: 1}]);
       localStorage.setItem("cartItem", i);
       //setMessage(`Item "${item.name}" added to cart!`);
     }

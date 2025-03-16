@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MdOutlineMenu } from "react-icons/md";
+import {IoPersonCircle} from "react-icons/io5"
 import DropdownMenu from "./DropdownMenu";
 
 function Nav() {

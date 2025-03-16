@@ -4,13 +4,13 @@ import { CiPizza, CiBurger, CiFries, CiCoffeeCup } from "react-icons/ci";
 import { IoFastFoodOutline } from "react-icons/io5";
 
 const FirstSectionSignup = ()=>{
-    const [adminName, setAdminName] = useState()
-    const [schoolName, setSchoolName] = useState()
-    const [schoolEmail, setSchoolEmail] = useState()
+    const [name, setName] = useState()
+    const [phoneNumber, setPhoneNumber] = useState()
+    const [email, setEmail] = useState()
     const navigate = useNavigate()
 
     const handleNext = ()=>{
-        localStorage.setItem('school', JSON.stringify({adminName, schoolEmail, schoolName}))
+        localStorage.setItem('signupInfo', JSON.stringify({name, email, phoneNumber}))
         navigate('../../signup/2')
     }
     return (
@@ -57,11 +57,11 @@ const FirstSectionSignup = ()=>{
                     It is our great pleasure to have<br/> you on board
                 </p>
             <br/>
-                <input type="text" placeholder="Enter your admin name" required onChange={(e)=>setAdminName(e.target.value)}/>
+                <input type="text" placeholder="Enter your fullname" required onChange={(e)=>setName(e.target.value)}/>
             <br/>
-                <input type="text" placeholder="Enter your school name" required onChange={(e)=>setSchoolName(e.target.value)}/>
+                <input type="email" placeholder="Enter your Email" required onChange={(e)=>setEmail(e.target.value)}/>
             <br/>
-                <input type="text" placeholder="Enter your school email" required onChange={(e)=>setSchoolEmail(e.target.value)}/>
+                <input type="tel" placeholder="Enter your phone number" required onChange={(e)=>setPhoneNumber(e.target.value)}/>
             <br/>
             <br/>
                 <button onClick={handleNext}>Next</button>

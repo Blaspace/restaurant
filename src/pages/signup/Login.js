@@ -33,8 +33,7 @@ const Login = () => {
       })
       .then((data) => {
         localStorage.setItem("token", data.accessToken);
-        localStorage.setItem("user", "school");
-        navigate("../../dashboard");
+        navigate("../../");
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -49,11 +48,36 @@ const Login = () => {
       <div className="signup">
         <div className="signup-right">
           <h1>Welcome, login to your account</h1>
-          <CiPizza size={50} color="#fc8a06" style={{position: 'absolute', right:'50px', top:"100px"}}/>
-          <CiBurger size={50} color="#fc8a06" style={{position: 'absolute', left:'50px', top:"150px"}}/>
-          <CiFries size={50} color="#fc8a06" style={{position: 'absolute', left:'70px', bottom:"150px"}}/>
-          <CiCoffeeCup size={50} color="#fc8a06" style={{position: 'absolute', right:'40px', bottom:"80px", transform: 'rotate(30deg)'}}/>
-          <IoFastFoodOutline  size={50} color="#fc8a06" style={{position: 'absolute', left:'230px', top:"120px"}}/>
+          <CiPizza
+            size={50}
+            color="#fc8a06"
+            style={{ position: "absolute", right: "50px", top: "100px" }}
+          />
+          <CiBurger
+            size={50}
+            color="#fc8a06"
+            style={{ position: "absolute", left: "50px", top: "150px" }}
+          />
+          <CiFries
+            size={50}
+            color="#fc8a06"
+            style={{ position: "absolute", left: "70px", bottom: "150px" }}
+          />
+          <CiCoffeeCup
+            size={50}
+            color="#fc8a06"
+            style={{
+              position: "absolute",
+              right: "40px",
+              bottom: "80px",
+              transform: "rotate(30deg)",
+            }}
+          />
+          <IoFastFoodOutline
+            size={50}
+            color="#fc8a06"
+            style={{ position: "absolute", left: "230px", top: "120px" }}
+          />
           <br />
           <br />
           <br />

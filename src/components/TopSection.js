@@ -87,7 +87,7 @@ function TopSection() {
 
   return (
     <>
-    <Cart cart={openCart} setCart={setOpenCart}/>
+    <Cart showCart={openCart} setShowCart={setOpenCart}/>
     <div className="tops-con">
       <div className="tops">
         <p className="top-text">

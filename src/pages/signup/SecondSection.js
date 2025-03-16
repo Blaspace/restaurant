@@ -4,32 +4,66 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiPizza, CiBurger, CiFries, CiCoffeeCup } from "react-icons/ci";
 import { IoFastFoodOutline } from "react-icons/io5";
+import Popup from "../../components/PopUp"
 
 const SecondSection = () => {
+  const [location, setLocation] = useState();
   const [password, setPassword] = useState();
   const [conPassword, setConPassword] = useState();
+  const [message, setMessage] = useState();
   const navigate = useNavigate();
 
   const handleNext = () => {
-    if (password === conPassword) {
-      const i = localStorage.getItem("school");
-      if (i && i !== "undifined") {
-        localStorage.setItem(
-          "school",
-          JSON.stringify({ ...JSON.parse(i), password })
-        );
-        navigate("../../signup/3");
+    if (location && password && conPassword) {
+      if (password === conPassword) {
+              const info = localStorage.getItem('signupInfo')
+          if(info && info !== 'undefined'){
+            e.target.innerText = "Loading..."
+            e.target.style.backgroundColor = "lightgrey"
+            e.target.style.color = "black"
+
+              fetch(`${process.env.REACT_APP_APIURL}/school/add`,{
+                  method: 'POST',
+                  headers:{
+                      "Content-Type":"application/json"
+                  },
+                  body: JSON.stringify({...JSON.parse(info), location, password})
+              })
+              .then((res)=>{
+                  if(res.ok){
+                      return res.json()
+                  }else if(res.status === 409){
+                      setMessage('this user already exist')
+                  }else{
+                      setMessage('something went wrong')
+                  }
+              })
+              .then((data)=>{
+                  console.log(data);
+                  localStorage.setItem('token', data.accessToken)
+                  navigate('../../')
+              })
+              .catch(err=>console.log(err))
+              .finally(()=>{
+                  e.target.innerText = "Signup"
+                  e.target.style.backgroundColor = "#fc8a06"
+                  e.target.style.color = "#ffffff"
+              })
+            }else{
+              navigate('../../signup/1')
+            }
       } else {
-        navigate("../../signup/1");
+        setMessage("Your password must be thesame as your confirm password");
       }
     } else {
-      alert("Your password must be thesame as your confirm password");
+      setMessage("All fields are required");
     }
   };
   return (
     <>
+    <Popup message={message} setMessage={setMessage}/>
       <div className="signup-right">
-      <CiPizza
+        <CiPizza
           size={50}
           color="#fc8a06"
           style={{ position: "absolute", right: "50px", top: "100px" }}
@@ -71,6 +105,13 @@ const SecondSection = () => {
             <br /> you on board
           </p>
           <br />
+          <br />
+          <input
+            type="text"
+            placeholder="Enter your location"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <br />
           <input
             type="password"
