@@ -13,7 +13,7 @@ const SecondSection = () => {
   const [message, setMessage] = useState();
   const navigate = useNavigate();
 
-  const handleNext = () => {
+  const handleNext = (e) => {
     if (location && password && conPassword) {
       if (password === conPassword) {
               const info = localStorage.getItem('signupInfo')
@@ -128,7 +128,7 @@ const SecondSection = () => {
           />
           <br />
           <br />
-          <button onClick={handleNext}>Next</button>
+          <button onClick={(e)=>handleNext(e)}>SignUp</button>
           <br />
           <p>
             <small>Already have an account?</small>{" "}
