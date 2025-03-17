@@ -2,12 +2,25 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { FaPlusSquare, FaMinusSquare, FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { FiLoader } from "react-icons/fi";
+import { usePaystackPayment } from "react-paystack";
 import RestaurantContext from "../context/RestaurantContext";
+import PopUp from "./PopUp"
+import { useNavigate } from "react-router-dom";
 
 function Cart({ showCart, setShowCart }) {
   const [width, setWidth] = useState("0");
   const { cart, setCart } = useContext(RestaurantContext);
   const [price, setPrice] = useState();
+  const [message, setMessage] = useState(null);
+  const navigate = useNavigate()
+
+  const pay = usePaystackPayment();
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: "ngbedejames415@gmail.com",
+    amount: 100 * price * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+    publicKey: "pk_live_825b5b9b59c4c074932aa4549f10964d0eb966f5",
+  };
 
   useEffect(() => {
     if (showCart) {
@@ -22,16 +35,16 @@ function Cart({ showCart, setShowCart }) {
   }, [showCart]);
 
   useEffect(() => {
-    let p = 0
+    let p = 0;
     cart.forEach((v) => {
-      p += v.price * v.num
+      p += v.price * v.num;
       if (v.num === 0) {
         const x = cart.filter((vi) => vi.name !== v.name);
         localStorage.setItem("cartItem", JSON.stringify(x));
         setCart(x);
       }
     });
-    setPrice(p)
+    setPrice(p);
   }, [cart]);
 
   const handleRemove = (name) => {
@@ -62,8 +75,21 @@ function Cart({ showCart, setShowCart }) {
     setCart(i);
   };
 
+  const handlePay = () => {
+    if(localStorage.getItem("token")){
+    pay({
+      onSuccess:()=> setMessage("Your order has been sent"),
+      onClose:()=> setMessage("Sorry you payment was unsuccessful"),
+      config
+    });
+  }else{
+    navigate('../../login')
+  }
+  };
+
   return (
     <>
+    <PopUp message={message} setMessage={setMessage} />
       <div className="cart" style={{ width, zIndex: "15" }}>
         <br />
         <h2>Your Cart</h2>
@@ -90,7 +116,7 @@ function Cart({ showCart, setShowCart }) {
                         {value.price * value.num}.0
                       </b>
                     </p>
-                    <br/>
+                    <br />
                     <p style={{ fontSize: "20px" }}>
                       {value.num}{" "}
                       <FaPlusSquare
@@ -121,7 +147,8 @@ function Cart({ showCart, setShowCart }) {
           {cart.length && (
             <div style={{ justifyContent: "spaceAround" }}>
               {" "}
-              <button>Check Out</button> <h2>Total: NGN {price}</h2>
+              <button onClick={handlePay}>Check Out</button>{" "}
+              <h2>Total: NGN {price}</h2>
             </div>
           )}
           <br />

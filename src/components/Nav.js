@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MdOutlineMenu } from "react-icons/md";
-import {IoPersonCircle} from "react-icons/io5"
+import { IoPersonCircle } from "react-icons/io5";
 import DropdownMenu from "./DropdownMenu";
+import ProfileDropdown from "./ProfileDropdown";
 
 function Nav() {
   const [drop, setDrop] = useState(false);
@@ -88,24 +89,31 @@ function Nav() {
             >
               <li>Track Order</li>
             </NavLink>
-            <NavLink
-              style={({ isActive }) => {
-                return isActive
-                  ? {
-                      background: "orange",
-                      color: "#ffffff",
-                      borderRadius: "20px",
-                      textDecoration: "none",
-                    }
-                  : {
-                      color: "black",
-                      textDecoration: "none",
-                    };
-              }}
-              to={"/login"}
-            >
-              <button>Login/Signup</button>
-            </NavLink>
+            {localStorage.getItem('token') ? (
+              <>
+              <IoPersonCircle size={40} color="#03081f"/>
+              <ProfileDropdown drop={true}/>
+              </>
+            ) : (
+              <NavLink
+                style={({ isActive }) => {
+                  return isActive
+                    ? {
+                        background: "orange",
+                        color: "#ffffff",
+                        borderRadius: "20px",
+                        textDecoration: "none",
+                      }
+                    : {
+                        color: "black",
+                        textDecoration: "none",
+                      };
+                }}
+                to={"/login"}
+              >
+                <button>Login/Signup</button>
+              </NavLink>
+            )}
           </ul>
         </div>
       </div>

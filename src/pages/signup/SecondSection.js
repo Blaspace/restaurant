@@ -21,8 +21,9 @@ const SecondSection = () => {
             e.target.innerText = "Loading..."
             e.target.style.backgroundColor = "lightgrey"
             e.target.style.color = "black"
-
-              fetch(`${process.env.REACT_APP_APIURL}/school/add`,{
+//https://restaurant-server-0pld.onrender.com
+//process.env.REACT_APP_APIURL
+              fetch(`https://restaurant-server-0pld.onrender.com/signup`,{
                   method: 'POST',
                   headers:{
                       "Content-Type":"application/json"
@@ -110,7 +111,7 @@ const SecondSection = () => {
             type="text"
             placeholder="Enter your location"
             required
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setLocation(e.target.value)}
           />
           <br />
           <input

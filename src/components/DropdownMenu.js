@@ -1,14 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {IoMdClose} from "react-icons/io"
+import { IoMdClose } from "react-icons/io";
 
 function DropdownMenu({ drop, setDrop }) {
   return (
     <div className="dropdown" style={{ height: drop ? "100vh" : "0" }}>
       <ul>
-         <IoMdClose size={40} color="#ffffff" style={{ position: "absolute",
-            top: "55px",
-            right: "10px",}} onClick={()=>setDrop(false)}/>
+        <IoMdClose
+          size={40}
+          color="#ffffff"
+          style={{ position: "absolute", top: "55px", right: "10px" }}
+          onClick={() => setDrop(false)}
+        />
         <NavLink
           style={({ isActive }) => {
             return isActive
@@ -73,22 +76,46 @@ function DropdownMenu({ drop, setDrop }) {
         >
           <li onClick={() => setDrop(false)}>Track Order</li>
         </NavLink>
-        <NavLink
-          style={({ isActive }) => {
-            return isActive
-              ? {
-                  color: "#ffffff",
-                  textDecoration: "none",
-                }
-              : {
-                  color: "#ffffff",
-                  textDecoration: "none",
-                };
-          }}
-          to={"/login"}
-        >
-          <button onClick={() => setDrop(false)}>Login/Signup</button>
-        </NavLink>
+        {localStorage.getItem("token") ? (
+          <NavLink
+            style={({ isActive }) => {
+              return isActive
+                ? {
+                    color: "#ffffff",
+                    textDecoration: "none",
+                  }
+                : {
+                    color: "#ffffff",
+                    textDecoration: "none",
+                  };
+            }}
+            to={"/login"}
+          >
+            <button
+              onClick={() => localStorage.removeItem("token")}
+              style={{ background: "red" }}
+            >
+              Logout
+            </button>
+          </NavLink>
+        ) : (
+          <NavLink
+            style={({ isActive }) => {
+              return isActive
+                ? {
+                    color: "#ffffff",
+                    textDecoration: "none",
+                  }
+                : {
+                    color: "#ffffff",
+                    textDecoration: "none",
+                  };
+            }}
+            to={"/login"}
+          >
+            <button onClick={() => setDrop(false)}>Login/Signup</button>
+          </NavLink>
+        )}
       </ul>
     </div>
   );

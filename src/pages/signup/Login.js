@@ -15,7 +15,7 @@ const Login = () => {
     e.target.innerText = "Loading...";
     e.target.style.backgroundColor = "lightgrey";
     e.target.style.color = "black";
-    fetch(`${process.env.REACT_APP_APIURL}/login`, {
+    fetch(`https://restaurant-server-0pld.onrender.com/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
