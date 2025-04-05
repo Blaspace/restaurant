@@ -19,7 +19,7 @@ function Cart({ showCart, setShowCart }) {
     reference: new Date().getTime().toString(),
     email: "ngbedejames415@gmail.com",
     amount: 100 * price * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: "pk_live_825b5b9b59c4c074932aa4549f10964d0eb966f5",
+    publicKey: "pk_test_40029bf4763307a89e72d86dfb1885913336e29f",
   };
 
   useEffect(() => {
