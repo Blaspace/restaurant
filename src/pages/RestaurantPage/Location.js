@@ -56,7 +56,7 @@ const params = useParams()
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={mapStyle}
-            zoom={17}
+            zoom={16}
             center={center}
             onLoad={onLoad}
             onUnmount={onUnmount}

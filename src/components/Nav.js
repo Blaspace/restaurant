@@ -7,9 +7,12 @@ import ProfileDropdown from "./ProfileDropdown";
 
 function Nav() {
   const [drop, setDrop] = useState(false);
+  const [profileDrop, setProfileDrop] = useState(false);
+
+
   return (
     <>
-      <DropdownMenu const drop={drop} setDrop={setDrop} />
+      <DropdownMenu drop={drop} setDrop={setDrop} />
       <div className="nav-con" id="nav">
         <div className="nav">
           <span className="hamburger" onClick={() => setDrop(true)}>
@@ -91,8 +94,8 @@ function Nav() {
             </NavLink>
             {localStorage.getItem('token') ? (
               <>
-              <IoPersonCircle size={40} color="#03081f"/>
-              <ProfileDropdown drop={true}/>
+              <IoPersonCircle size={40} color="#03081f" onClick={()=>setProfileDrop(!profileDrop)}/>
+              <ProfileDropdown drop={profileDrop} setDrop={setProfileDrop}/>
               </>
             ) : (
               <NavLink

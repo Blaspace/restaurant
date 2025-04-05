@@ -1,9 +1,14 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-function ProfileDropdown({ drop }) {
+function ProfileDropdown({ drop, setDrop }) {
+  const [height, setHeight] = useState("0")
+
+  useEffect(()=>{
+    drop ? setHeight("200px") : setHeight("0")
+  },[drop])
   return (
-    <div className='profile-dropdown' style={{height: drop ? '200px' : '0'}}>
+    <div className="profile-dropdown" style={{ height }}>
       <ul>
         <NavLink
           style={({ isActive }) => {
@@ -19,28 +24,27 @@ function ProfileDropdown({ drop }) {
           }}
           to={"/"}
         >
-          <li>Notification</li>
+          <li onClick={()=>setDrop(false)}>Notification</li>
         </NavLink>
-          <NavLink
-            style={({ isActive }) => {
-              return isActive
-                ? {
-                    color: "red",
-                    textDecoration: "none",
-                  }
-                : {
-                    color: "red",
-                    textDecoration: "none",
-                  };
-            }}
-            to={"/login"}
-          >
-             <p>Logout</p>
-          </NavLink>
-        
+        <NavLink
+          style={({ isActive }) => {
+            return isActive
+              ? {
+                  color: "red",
+                  textDecoration: "none",
+                }
+              : {
+                  color: "red",
+                  textDecoration: "none",
+                };
+          }}
+          to={"/login"}
+        >
+          <li onClick={()=>setDrop(false)}>Logout</li>
+        </NavLink>
       </ul>
     </div>
-  )
+  );
 }
 
-export default ProfileDropdown
+export default ProfileDropdown;
