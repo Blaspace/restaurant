@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 🍔 FoodExpress - Food Delivery Web App  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project Screenshot](https://www.jamesdev.com.ng/static/media/restaurant.d4d64bef5fdf04d04265.PNG)
+*A full-stack food delivery platform connecting users with local restaurants.*  
 
-## Available Scripts
+## 🌟 Features  
 
-In the project directory, you can run:
+### 🗺️ Location-Based Restaurant Discovery  
+- Uses **Google Maps API** to detect user location  
+- Displays nearby restaurants in real-time  
 
-### `npm start`
+### � Meal Package Listings  
+- Browse restaurant menus with images & descriptions  
+- Filter by cuisine, price, or dietary preferences  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 💳 Secure Payments  
+- Integrated **Paystack API** for seamless transactions  
+- Supports cards, bank transfers, and mobile money  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📱 Responsive Design  
+- Mobile-first UI built with **React**  
+- Smooth experience across all devices  
 
-### `npm test`
+## 🛠️ Tech Stack  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Frontend               | Backend              | APIs & Services       |  
+|------------------------|----------------------|-----------------------|  
+| React                  | Node.js              | Google Maps API       |  
+| Context API            | Express.js           | Paystack API          |  
+| CSS Modules            | MongoDB              | Geolocation API       |  
+|                        | JWT Authentication   |                       |  
 
-### `npm run build`
+## 🚀 Live Demo  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🔗 [Try the Live Demo](https://restaurant-aosa.onrender.com)  
+🎥 [Watch Demo Video on YouTube](https://youtu.be/DbBHNgwk7i0?si=OMtJ94Uh5nNpCInM)  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Installation  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites  
+- Node.js (v16+)  
+- MongoDB Atlas account or local MongoDB  
+- Google Maps API key  
+- Paystack secret key  
 
-### `npm run eject`
+### Frontend Setup  
+```bash
+git clone https://github.com/Blaspace/restaurant
+cd restaurant
+npm install
+echo "REACT_APP_GOOGLE_MAPS_API_KEY=your_key" > .env
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend Setup
+```bash
+get clone https://github.com/Blaspace/restaurant-server
+npm install
+echo "MONGODB_URI=your_connection_string
+PAYSTACK_SECRET_KEY=your_key
+JWT_SECRET=your_secret" > .env
+npm run dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### License
+MIT License - see LICENSE for details
