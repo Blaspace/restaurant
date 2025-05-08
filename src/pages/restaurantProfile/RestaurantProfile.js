@@ -1,12 +1,15 @@
-import React from 'react'
-import RestaurantProfileHeader from "./RestaurantProfileHeader"
+import React from "react";
+import RestaurantProfileHeader from "./RestaurantProfileHeader";
 
 function RestaurantProfile() {
   return (
-    <div>
-      <RestaurantProfileHeader/>
+    <div className="restaurant-profile">
+      <section></section>
+      <section>
+        <RestaurantProfileHeader />
+      </section>
     </div>
-  )
+  );
 }
 
-export default RestaurantProfile
+export default RestaurantProfile;

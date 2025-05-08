@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { FaPlusSquare, FaMinusSquare, FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import { FiLoader } from "react-icons/fi";
 import { usePaystackPayment } from "react-paystack";
 import RestaurantContext from "../context/RestaurantContext";
-import PopUp from "./PopUp"
+import PopUp from "./PopUp";
 import { useNavigate } from "react-router-dom";
 
 function Cart({ showCart, setShowCart }) {
@@ -12,16 +11,22 @@ function Cart({ showCart, setShowCart }) {
   const { cart, setCart } = useContext(RestaurantContext);
   const [price, setPrice] = useState();
   const [message, setMessage] = useState(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const pay = usePaystackPayment();
+
+  //payment config
   const config = {
     reference: new Date().getTime().toString(),
     email: "ngbedejames415@gmail.com",
     amount: 100 * price * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: "pk_test_40029bf4763307a89e72d86dfb1885913336e29f",
+    metadata: {
+      userId: "hello world",
+    },
   };
 
+  //toggle cart ui
   useEffect(() => {
     if (showCart) {
       if (window.innerWidth >= 780) {
@@ -34,6 +39,7 @@ function Cart({ showCart, setShowCart }) {
     }
   }, [showCart]);
 
+  //calculate total price of items in cart
   useEffect(() => {
     let p = 0;
     cart.forEach((v) => {
@@ -47,12 +53,14 @@ function Cart({ showCart, setShowCart }) {
     setPrice(p);
   }, [cart]);
 
+  //remove items from cart and localstorage
   const handleRemove = (name) => {
     const x = cart.filter((v) => v.name !== name);
     localStorage.setItem("cartItem", JSON.stringify(x));
     setCart(x);
   };
 
+  //add number of the same item
   const handleAdd = (name) => {
     const i = cart.map((value) => {
       if (value.name === name) {
@@ -64,6 +72,7 @@ function Cart({ showCart, setShowCart }) {
     setCart(i);
   };
 
+  //reduse the number of the same item
   const handlReduce = (name) => {
     const i = cart.map((value) => {
       if (value.name === name) {
@@ -75,21 +84,22 @@ function Cart({ showCart, setShowCart }) {
     setCart(i);
   };
 
+  //checkout items in cart
   const handlePay = () => {
-    if(localStorage.getItem("token")){
-    pay({
-      onSuccess:()=> setMessage("Your order has been sent"),
-      onClose:()=> setMessage("Sorry you payment was unsuccessful"),
-      config
-    });
-  }else{
-    navigate('../../login')
-  }
+    if (localStorage.getItem("token")) {
+      pay({
+        onSuccess: () => setMessage("Your order has been sent"),
+        onClose: () => setMessage("Sorry you payment was unsuccessful"),
+        config,
+      });
+    } else {
+      navigate("../../login");
+    }
   };
 
   return (
     <>
-    <PopUp message={message} setMessage={setMessage} />
+      <PopUp message={message} setMessage={setMessage} />
       <div className="cart" style={{ width, zIndex: "15" }}>
         <br />
         <h2>Your Cart</h2>

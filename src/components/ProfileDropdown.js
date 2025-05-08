@@ -7,6 +7,10 @@ function ProfileDropdown({ drop, setDrop }) {
   useEffect(()=>{
     drop ? setHeight("200px") : setHeight("0")
   },[drop])
+  const handleLogout =() =>{
+    localStorage.removeItem("token")
+    setDrop(false)
+  }
   return (
     <div className="profile-dropdown" style={{ height }}>
       <ul>
@@ -37,10 +41,8 @@ function ProfileDropdown({ drop, setDrop }) {
                   color: "red",
                   textDecoration: "none",
                 };
-          }}
-          to={"/login"}
-        >
-          <li onClick={()=>setDrop(false)}>Logout</li>
+          }}>
+          <li onClick={()=>handleLogout()}>Logout</li>
         </NavLink>
       </ul>
     </div>

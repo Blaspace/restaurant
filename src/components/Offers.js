@@ -1,6 +1,8 @@
 import React from "react";
+import {useNavigate } from "react-router-dom"
 
 function Offers({ offers }) {
+  const navigate = useNavigate()
   const offer = [
     {
       restaurantName: "McDonald's East London",
@@ -41,6 +43,7 @@ function Offers({ offers }) {
             <div
               className={`card card${i +1}`}
               style={{ backgroundImage:`url(${value.img})` }}
+              onClick={()=>navigate("../../restaurant/McDonald's East London")}
             >
               <small>{value.off}</small>
               <section>
